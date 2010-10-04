@@ -30,7 +30,6 @@ adb pull /system/etc/AdieHWCodec_WA.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/bcm4329.hcd ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/bcm_mfg.bin ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/default.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/default_org.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/default_org_WA.acdb ../../../vendor/htc/$DEVICE/proprietary
@@ -125,7 +124,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
     vendor/htc/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
     vendor/htc/__DEVICE__/proprietary/bcm4329.hcd:/system/etc/firmware/bcm4329.hcd \\
-    vendor/htc/__DEVICE__/proprietary/bcm_mfg.bin:/system/etc/firmware/bcm_mfg.bin \\
     vendor/htc/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
     vendor/htc/__DEVICE__/proprietary/default.acdb:/system/etc/firmware/default.acdb \\
     vendor/htc/__DEVICE__/proprietary/default_org.acdb:/system/etc/firmware/default_org.acdb \\
