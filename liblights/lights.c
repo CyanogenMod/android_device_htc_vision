@@ -38,6 +38,7 @@ static struct light_state_t *g_notify;
 static struct light_state_t *g_attention;
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
+
 static int g_backlight = 255;
 static int g_buttons = 0;
 struct led_prop {
@@ -500,7 +501,10 @@ set_light_notifications(struct light_device_t* dev,
     }
     handle_trackball_light_locked(LIGHT_NOTIFY);
 
+    set_speaker_light_locked(dev, state);
+
     pthread_mutex_unlock(&g_lock);
+
     return 0;
 }
 
