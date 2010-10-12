@@ -24,6 +24,7 @@ adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/htc_ebdlogd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/logcat2 ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/lsc_camera ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/rmt_storage ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/A1026_CFG.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AdieHWCodec.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AdieHWCodec_WA.csv ../../../vendor/htc/$DEVICE/proprietary
@@ -171,6 +172,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libysshared.so:/system/lib/libysshared.so \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
+    vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
     vendor/htc/__DEVICE__/proprietary/mm_property.conf:/system/etc/mm_property.conf \\
     vendor/htc/__DEVICE__/proprietary/pvasflocal.cfg:/system/etc/pvasflocal.cfg \\
     vendor/htc/__DEVICE__/proprietary/vidc_720p_command_control.fw:/system/etc/firmware/vidc_720p_command_control.fw \\
