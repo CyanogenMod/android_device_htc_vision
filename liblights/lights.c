@@ -62,6 +62,7 @@ enum {
     BLUE_LED,
     RED_LED,
     LCD_BACKLIGHT,
+    KEYBOARD_BACKLIGHT,
     NUM_LEDS,
 };
 
@@ -92,6 +93,9 @@ struct led leds[NUM_LEDS] = {
     },
     [LCD_BACKLIGHT] = {
         .brightness = { "/sys/class/leds/lcd-backlight/brightness", 0},
+    },
+    [KEYBOARD_BACKLIGHT] = {
+	    .brightness = { "/sys/class/leds/keyboard-backlight/brightness", 0},
     },
 };
 
@@ -335,8 +339,12 @@ static int
 set_light_keyboard(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    /* nothing to do on mahimahi*/
-    return 0;
+    int err = 0;
+    int on = is_lit(state);
+    pthread_mutex_lock(&g_lock);
+    err = write_int(&leds[KEYBOARD_BACKLIGHT].brightness, on?255:0);
+    pthread_mutex_unlock(&g_lock);
+    return err;
 }
 
 static int
@@ -628,7 +636,7 @@ const struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_major = 1,
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "mahimahi lights Module",
+    .name = "Vision lights module",
     .author = "Google, Inc.",
     .methods = &lights_module_methods,
 };
