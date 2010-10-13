@@ -56,6 +56,7 @@ adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprie
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
@@ -90,7 +91,6 @@ adb pull /system/lib/libvoPackUV.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvorbisidec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoSrcRTSP.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoVidDec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libysshared.so ../../../vendor/htc/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -113,7 +113,8 @@ adb pull /system/lib/libysshared.so ../../../vendor/htc/$DEVICE/proprietary
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libloc_api.so:obj/lib/libloc_api.so \\
     vendor/htc/__DEVICE__/proprietary/libloc_api-rpc.so:obj/lib/libloc_api-rpc.so \\
-    vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so
+    vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so
 
 # All the blobs necessary for passion
 PRODUCT_COPY_FILES += \\
@@ -131,6 +132,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/default_org_WA.acdb:/system/etc/firmware/default_org_WA.acdb \\
     vendor/htc/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:/system/etc/firmware/fw_bcm4329_apsta.bin \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
+    vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libgemini.so:/system/lib/libgemini.so \\
@@ -169,7 +171,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libvorbisidec.so:/system/lib/libvorbisidec.so \\
     vendor/htc/__DEVICE__/proprietary/libvoSrcRTSP.so:/system/lib/libvoSrcRTSP.so \\
     vendor/htc/__DEVICE__/proprietary/libvoVidDec.so:/system/lib/libvoVidDec.so \\
-    vendor/htc/__DEVICE__/proprietary/libysshared.so:/system/lib/libysshared.so \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
