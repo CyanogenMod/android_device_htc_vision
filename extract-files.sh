@@ -56,6 +56,7 @@ adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprie
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/gralloc.msm7x30.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioeq.so ../../../vendor/htc/$DEVICE/proprietary
@@ -137,6 +138,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/default_org_WA.acdb:/system/etc/firmware/default_org_WA.acdb \\
     vendor/htc/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:/system/etc/firmware/fw_bcm4329_apsta.bin \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
+    vendor/htc/__DEVICE__/proprietary/gralloc.msm7x30.so:/system/lib/hw/gralloc.msm7x30.so \\
     vendor/htc/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioeq.so:/system/lib/libaudioeq.so \\
