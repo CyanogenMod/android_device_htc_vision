@@ -42,11 +42,11 @@
         <item>41</item>
         <item>91</item>
         <item>161</item>
-		<item>226</item>
-		<item>321</item>
-		<item>641</item>
-		<item>1281</item>
-		<item>2601</item>
+        <item>226</item>
+        <item>321</item>
+        <item>641</item>
+        <item>1281</item>
+        <item>2601</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -58,12 +58,12 @@
         <item>89</item>
         <item>126</item>
         <item>164</item>
-		<item>164</item>
-		<item>164</item>
-		<item>187</item>
-		<item>210</item>
-		<item>233</item>
-		<item>255</item>
+        <item>164</item>
+        <item>164</item>
+        <item>187</item>
+        <item>210</item>
+        <item>233</item>
+        <item>255</item>
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -74,13 +74,13 @@
         <item>255</item>
         <item>255</item>
         <item>255</item>
-		<item>255</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
+        <item>255</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
     </integer-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
@@ -89,10 +89,10 @@
          Passion has no keyboard so all values are zero.
     -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -131,7 +131,6 @@
          [associated radio-type],[priority]  -->
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1"</item>
-        <item>"wimax,6,2,0"</item>		
         <item>"mobile,0,0,0"</item>
         <item>"mobile_mms,2,0,2"</item>
         <item>"mobile_supl,3,0,2"</item>
