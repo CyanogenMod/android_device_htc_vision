@@ -109,6 +109,13 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
     device/htc/vision/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.f
 
+# Certificates
+PRODUCT_COPY_FILES += \
+    device/htc/vision/certs/T-Mobile_USA_Intermediate_CA_01.der:system/etc/T-Mobile_USA_Intermediate_CA_01.der \
+    device/htc/vision/certs/T-Mobile_USA_Issuer_CA_01.der:system/etc/T-Mobile_USA_Issuer_CA_01.der \
+    device/htc/vision/certs/T-Mobile_USA_Issuer_CA_02.der:system/etc/T-Mobile_USA_Issuer_CA_02.der \
+    device/htc/vision/certs/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 

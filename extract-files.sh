@@ -60,11 +60,13 @@ adb pull /system/lib/hw/gralloc.msm7x30.so ../../../vendor/htc/$DEVICE/proprieta
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioeq.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libganril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libHTC_mm_property.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libkineto.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libloc_api-rpc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libloc_api.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
@@ -77,6 +79,7 @@ adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libomx_wmadec_sharedlibrary.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libomx_wmvdec_sharedlibrary.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libqcomm_omx.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/librilswitch.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAACDec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAMRNBDec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAMRWBDec.so ../../../vendor/htc/$DEVICE/proprietary
@@ -139,6 +142,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libaudioeq.so:/system/lib/libaudioeq.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
+    vendor/htc/__DEVICE__/proprietary/libganril.so:/system/lib/libganril.so \\
     vendor/htc/__DEVICE__/proprietary/libgemini.so:/system/lib/libgemini.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
@@ -146,6 +150,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
     vendor/htc/__DEVICE__/proprietary/libHTC_mm_property.so:/system/lib/libHTC_mm_property.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
+    vendor/htc/__DEVICE__/proprietary/libkineto.so:/system/lib/libkineto.so \\
     vendor/htc/__DEVICE__/proprietary/libloc_api-rpc.so:/system/lib/libloc_api-rpc.so \\
     vendor/htc/__DEVICE__/proprietary/libloc_api.so:/system/lib/libloc_api.so \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
@@ -159,6 +164,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libomx_wmvdec_sharedlibrary.so:/system/lib/libomx_wmvdec_sharedlibrary.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libqcomm_omx.so:/system/lib/libqcomm_omx.so \\
+    vendor/htc/__DEVICE__/proprietary/librilswitch.so:/system/lib/librilswitch.so \\
     vendor/htc/__DEVICE__/proprietary/libvoAACDec.so:/system/lib/libvoAACDec.so \\
     vendor/htc/__DEVICE__/proprietary/libvoAMRNBDec.so:/system/lib/libvoAMRNBDec.so \\
     vendor/htc/__DEVICE__/proprietary/libvoAMRWBDec.so:/system/lib/libvoAMRWBDec.so \\

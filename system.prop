@@ -1,12 +1,28 @@
 #
 # system.prop for vision
 #
-
 ro.sf.lcd_density=240
 
 debug.fb.rgb565 = 0
 
-rild.libpath=/system/lib/libhtc_ril.so
+# Modify MMS APN retry timer from 5s to 2s.
+ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
+
+rild.libpath=/system/lib/librilswitch.so
+rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
+rilswitch.ganlibpath=/system/lib/libganril.so
+
+ro.ril.enable.a53=1
+ro.ril.enable.dtm=0
+ro.ril.gprsclass=10
+ro.ril.hsdpa.category=10
+ro.ril.hsupa.category=6
+ro.ril.hsxpa=2
+ro.ril.def.agps.mode=1
+ro.ril.def.agps.feature=1
+ro.ril.disable.fd.plmn.prefix=23402,23410,23411
+ro.ril.enable.sdr=0
+ro.ril.enable.gea3=0
 
 # vision RF team request
 ro.ril.enable.dtm = 1
@@ -34,16 +50,4 @@ ro.ril.def.agps.mode = 2
 
 # For HSDPA low throughput
 ro.ril.disable.power.collapse = 1
-
-ro.ril.enable.a53=1
-ro.ril.enable.dtm=0
-ro.ril.gprsclass=10
-ro.ril.hsdpa.category=10
-ro.ril.hsupa.category=6
-ro.ril.hsxpa=3
-ro.ril.def.agps.mode=1
-ro.ril.def.agps.feature=1
-ro.ril.disable.fd.plmn.prefix=23402,23410,23411
-ro.ril.enable.sdr=0
-ro.ril.enable.gea3=0
 

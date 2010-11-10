@@ -5,7 +5,7 @@ on emmc
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
 	devwait emmc@system
-	exec /system/bin/e2fsck_recvy -p emmc@system
+	# exec /system/bin/e2fsck_recvy -p emmc@system
 	mount ext3 emmc@system /system ro data=ordered
 	devwait emmc@userdata
     exec /system/bin/e2fsck_recvy -p emmc@userdata
