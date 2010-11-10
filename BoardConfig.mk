@@ -87,6 +87,7 @@ TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_htc
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/vision/kernel
+TARGET_USERIMAGES_USE_EXT2 := true
 
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
