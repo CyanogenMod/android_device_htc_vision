@@ -43,6 +43,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y
 
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+
 DEVICE_PACKAGE_OVERLAYS += device/htc/vision/overlay
 
 PRODUCT_COPY_FILES += \
