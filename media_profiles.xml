@@ -80,10 +80,10 @@
     <CamcorderProfiles>
 
         <EncoderProfile quality="high" fileFormat="mp4" duration="60">
-            <Video codec="h264"
-                   bitRate="3000000"
-                   width="720"
-                   height="480"
+            <Video codec="m4v"
+                   bitRate="5000000"
+                   width="1280"
+                   height="720"
                    frameRate="30" />
 
             <Audio codec="amrnb"
