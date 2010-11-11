@@ -30,22 +30,6 @@ adb pull /system/etc/AdieHWCodec.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AdieHWCodec_WA.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/bcm4329.hcd ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/default.acdb ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/default_org.acdb ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/default_org_WA.acdb ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/fw_bcm4329.bin ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_command_control.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_h263_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_h264_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_h264_enc_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_mp2_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_mp4_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_mp4_enc_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/vidc_720p_vc1_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/Vision_SPK.acdb ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/yamato_pfp.fw ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/yamato_pm4.fw ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/mm_property.conf ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/pvasflocal.cfg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vomeComp.cfg ../../../vendor/htc/$DEVICE/proprietary
@@ -132,12 +116,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/akmd:/system/bin/akmd \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:/system/etc/AudioBTID.csv \\
     vendor/htc/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
-    vendor/htc/__DEVICE__/proprietary/bcm4329.hcd:/system/etc/firmware/bcm4329.hcd \\
     vendor/htc/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
-    vendor/htc/__DEVICE__/proprietary/default.acdb:/system/etc/firmware/default.acdb \\
-    vendor/htc/__DEVICE__/proprietary/default_org.acdb:/system/etc/firmware/default_org.acdb \\
-    vendor/htc/__DEVICE__/proprietary/default_org_WA.acdb:/system/etc/firmware/default_org_WA.acdb \\
-    vendor/htc/__DEVICE__/proprietary/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
     vendor/htc/__DEVICE__/proprietary/gralloc.msm7x30.so:/system/lib/hw/gralloc.msm7x30.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.vision.so:/system/lib/hw/sensors.vision.so \\
@@ -189,21 +168,10 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
     vendor/htc/__DEVICE__/proprietary/mm_property.conf:/system/etc/mm_property.conf \\
     vendor/htc/__DEVICE__/proprietary/pvasflocal.cfg:/system/etc/pvasflocal.cfg \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_command_control.fw:/system/etc/firmware/vidc_720p_command_control.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_h263_dec_mc.fw:/system/etc/firmware/vidc_720p_h263_dec_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_h264_dec_mc.fw:/system/etc/firmware/vidc_720p_h264_dec_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_h264_enc_mc.fw:/system/etc/firmware/vidc_720p_h264_enc_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_mp2_dec_mc.fw:/system/etc/firmware/vidc_720p_mp2_dec_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_mp4_dec_mc.fw:/system/etc/firmware/vidc_720p_mp4_dec_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_mp4_enc_mc.fw:/system/etc/firmware/vidc_720p_mp4_enc_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/vidc_720p_vc1_dec_mc.fw:/system/etc/firmware/vidc_720p_vc1_dec_mc.fw \\
-    vendor/htc/__DEVICE__/proprietary/Vision_SPK.acdb:/system/etc/firmware/Vision_SPK.acdb \\
     vendor/htc/__DEVICE__/proprietary/vomeComp.cfg:/system/etc/vomeComp.cfg \\
     vendor/htc/__DEVICE__/proprietary/vomeplay.cfg:/system/etc/vomeplay.cfg \\
     vendor/htc/__DEVICE__/proprietary/voVidDec.dat:/system/etc/voVidDec.dat \\
-    vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg \\
-    vendor/htc/__DEVICE__/proprietary/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \\
-    vendor/htc/__DEVICE__/proprietary/yamato_pm4.fw:/system/etc/firmware/yamato_pm4.fw
+    vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg
 EOF
 
 ./setup-makefiles.sh

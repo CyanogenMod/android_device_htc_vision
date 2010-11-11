@@ -96,7 +96,7 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/vision/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/vision/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb \
-    device/htc/vision/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
+    device/htc/vision/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
     device/htc/vision/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
     device/htc/vision/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
     device/htc/vision/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
@@ -138,7 +138,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/vision/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/vision/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/vision/modules/kineto_gan.ko:system/lib/modules/kineto_gan.ko
 
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
 
