@@ -63,8 +63,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
-    sensors.vision \
     lights.vision
+#   sensors.vision
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
