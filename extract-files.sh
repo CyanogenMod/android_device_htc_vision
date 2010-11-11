@@ -58,6 +58,7 @@ adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/prop
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/gralloc.msm7x30.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.vision.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioeq.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
@@ -86,7 +87,6 @@ adb pull /system/lib/libvoAMRNBDec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAMRWBDec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAndroid.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoH264Dec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoicesearch.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvomemedia.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoMMCCRRS.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoMP3Dec.so ../../../vendor/htc/$DEVICE/proprietary
@@ -120,6 +120,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libloc_api.so:obj/lib/libloc_api.so \\
     vendor/htc/__DEVICE__/proprietary/libloc_api-rpc.so:obj/lib/libloc_api-rpc.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so
 
 # All the blobs necessary for passion
@@ -140,6 +141,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
     vendor/htc/__DEVICE__/proprietary/gralloc.msm7x30.so:/system/lib/hw/gralloc.msm7x30.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.vision.so:/system/lib/hw/sensors.vision.so \\
+    vendor/htc/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioeq.so:/system/lib/libaudioeq.so \\
     vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
@@ -172,7 +174,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libvoAMRWBDec.so:/system/lib/libvoAMRWBDec.so \\
     vendor/htc/__DEVICE__/proprietary/libvoAndroid.so:/system/lib/libvoAndroid.so \\
     vendor/htc/__DEVICE__/proprietary/libvoH264Dec.so:/system/lib/libvoH264Dec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoicesearch.so:/system/lib/libvoicesearch.so \\
     vendor/htc/__DEVICE__/proprietary/libvomemedia.so:/system/lib/libvomemedia.so \\
     vendor/htc/__DEVICE__/proprietary/libvoMMCCRRS.so:/system/lib/libvoMMCCRRS.so \\
     vendor/htc/__DEVICE__/proprietary/libvoMP3Dec.so:/system/lib/libvoMP3Dec.so \\
