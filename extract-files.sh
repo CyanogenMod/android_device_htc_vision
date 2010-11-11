@@ -34,7 +34,7 @@ adb pull /system/etc/firmware/bcm4329.hcd ../../../vendor/htc/$DEVICE/proprietar
 adb pull /system/etc/firmware/default.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/default_org.acdb ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/default_org_WA.acdb ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/firmware/fw_bcm4329_apsta.bin ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/fw_bcm4329.bin ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/vidc_720p_command_control.fw ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/vidc_720p_h263_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/vidc_720p_h264_dec_mc.fw ../../../vendor/htc/$DEVICE/proprietary
@@ -136,7 +136,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/default.acdb:/system/etc/firmware/default.acdb \\
     vendor/htc/__DEVICE__/proprietary/default_org.acdb:/system/etc/firmware/default_org.acdb \\
     vendor/htc/__DEVICE__/proprietary/default_org_WA.acdb:/system/etc/firmware/default_org_WA.acdb \\
-    vendor/htc/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:/system/etc/firmware/fw_bcm4329_apsta.bin \\
+    vendor/htc/__DEVICE__/proprietary/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
     vendor/htc/__DEVICE__/proprietary/gralloc.msm7x30.so:/system/lib/hw/gralloc.msm7x30.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.vision.so:/system/lib/hw/sensors.vision.so \\
