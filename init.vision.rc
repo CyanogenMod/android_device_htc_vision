@@ -4,18 +4,26 @@ on emmc
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
-	devwait emmc@system
-	exec /system/bin/e2fsck_recvy -p emmc@system
-	mount ext3 emmc@system /system ro data=ordered
-	devwait emmc@userdata
+#   devwait emmc@system
+    devwait /dev/block/mmcblk0p25
+#   exec /system/bin/e2fsck_recvy -p emmc@system
+#   mount ext3 emmc@system /system ro data=ordered
+    mount ext3 /dev/block/mmcblk0p25 /system ro data=ordered
+#   devwait emmc@userdata
+    devwait /dev/block/mmcblk0p26
     exec /system/bin/e2fsck_recvy -p emmc@userdata
-	mount ext3 emmc@userdata /data nosuid nodev data=ordered
-	devwait emmc@cache
-	exec /system/bin/e2fsck_recvy -p emmc@cache
-	mount ext3 emmc@cache /cache nosuid nodev data=ordered
-    devwait emmc@devlog
-	exec /system/bin/e2fsck_recvy -p emmc@devlog
-	mount ext3 emmc@devlog /devlog nosuid nodev data=ordered
+#   mount ext3 emmc@userdata /data nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p26 /data nosuid nodev data=ordered
+#   devwait emmc@cache
+    devwait /dev/block/mmcblk0p27
+    exec /system/bin/e2fsck_recvy -p emmc@cache
+#   mount ext3 emmc@cache /cache nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p27 /cache nosuid nodev data=ordered
+#   devwait emmc@devlog
+    devwait /dev/block/mmcblk0p28
+    exec /system/bin/e2fsck_recvy -p emmc@devlog
+#   mount ext3 emmc@devlog /devlog nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p28 /devlog nosuid nodev data=ordered
 
 on early-init
     device mtd@misc 0460 radio diag
@@ -35,7 +43,7 @@ on boot
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0660                /sys/class/rfkill/rfkill0/state
-    
+
     # bluetooth MAC address programming
     chown bluetooth bluetooth /sys/module/board_vision/parameters/bdaddr
     setprop ro.bt.bdaddr_path /sys/module/board_vision/parameters/bdaddr
@@ -101,30 +109,30 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
 
 
 service udhcpd /system/bin/udhcpd
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service netsharing_on /system/bin/netsharing net on
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service netsharing_off /system/bin/netsharing net off
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
     user root
     disabled
 
 service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
-	user root
-    	disabled
-	oneshot
+    user root
+        disabled
+    oneshot
 
 service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k
-	user root
-    	disabled
-	oneshot
+    user root
+        disabled
+    oneshot
 
 on property:ro.build.tags=test-keys
     start htc_ebdlogd

@@ -65,21 +65,24 @@ BOARD_EGL_CFG := device/htc/vision/egl.cfg
 
 #BOARD_USES_QCOM_LIBS := true
 
-# # cat /proc/mtd
-# dev:    size   erasesize  name
-# mtd0: 00c00000 00020000 "wimax"
-# mtd1: 000a0000 00020000 "misc"
-# mtd2: 00500000 00020000 "recovery"
-# mtd3: 00280000 00020000 "boot"
-# mtd4: 15e00000 00020000 "system"
-# mtd5: 09f00000 00020000 "cache"
-# mtd6: 1aba0000 00020000 "userdata"
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00480000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00500000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x15e00000   # limited so we enforce room to grow
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x1aba0000
+# cat /proc/emmc
+# dev:        size     erasesize name
+# mmcblk0p17: 00040000 00000200 "misc"
+# mmcblk0p21: 0087f400 00000200 "recovery"
+# mmcblk0p22: 00400000 00000200 "boot"
+# mmcblk0p25: 19fbfa00 00000200 "system"
+# mmcblk0p27: 0cccce00 00000200 "cache"
+# mmcblk0p26: 53200200 00000200 "userdata"
+# mmcblk0p28: 01400000 00000200 "devlog"
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00400000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x0087f400
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x19fbfa00   # limited so we enforce room to grow
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x53200200
 
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+TARGET_USERIMAGES_USE_EXT2 := true
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/vision/kernel
