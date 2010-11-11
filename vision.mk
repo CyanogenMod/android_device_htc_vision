@@ -92,7 +92,6 @@ PRODUCT_COPY_FILES += \
 # Firmware
 PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    device/htc/vision/firmware/bcm_mfg.bin:system/etc/firmware/bcm_mfg.bin \
     device/htc/vision/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/vision/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/vision/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb \
