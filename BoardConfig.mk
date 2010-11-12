@@ -67,6 +67,8 @@ BOARD_EGL_CFG := device/htc/vision/egl.cfg
 
 BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
 
+BOARD_CAMERA_USE_GETBUFFERINFO := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"
