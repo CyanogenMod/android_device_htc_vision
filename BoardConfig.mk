@@ -71,6 +71,8 @@ BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
 
 BOARD_CAMERA_USE_GETBUFFERINFO := true
 
+BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"
