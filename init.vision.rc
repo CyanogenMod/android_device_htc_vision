@@ -11,18 +11,21 @@ on emmc
     mount ext3 /dev/block/mmcblk0p25 /system ro data=ordered
 #   devwait emmc@userdata
     devwait /dev/block/mmcblk0p26
-    exec /system/bin/e2fsck_recvy -p emmc@userdata
+#   exec /system/bin/e2fsck_recvy -p emmc@userdata
 #   mount ext3 emmc@userdata /data nosuid nodev data=ordered
+    exec /system/bin/e2fsck -p /dev/block/mmcblk0p26
     mount ext3 /dev/block/mmcblk0p26 /data nosuid nodev data=ordered
 #   devwait emmc@cache
     devwait /dev/block/mmcblk0p27
-    exec /system/bin/e2fsck_recvy -p emmc@cache
+#   exec /system/bin/e2fsck_recvy -p emmc@cache
 #   mount ext3 emmc@cache /cache nosuid nodev data=ordered
+    exec /system/bin/e2fsck -p /dev/block/mmcblk0p27
     mount ext3 /dev/block/mmcblk0p27 /cache nosuid nodev data=ordered
 #   devwait emmc@devlog
     devwait /dev/block/mmcblk0p28
-    exec /system/bin/e2fsck_recvy -p emmc@devlog
+#   exec /system/bin/e2fsck_recvy -p emmc@devlog
 #   mount ext3 emmc@devlog /devlog nosuid nodev data=ordered
+    exec /system/bin/e2fsck -p /dev/block/mmcblk0p28
     mount ext3 /dev/block/mmcblk0p28 /devlog nosuid nodev data=ordered
 
 on early-init
