@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
     device/htc/vision/firmware/Vision_SPK.acdb:system/etc/firmware/Vision_SPK.acdb \
     device/htc/vision/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/htc/vision/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.f
+    device/htc/vision/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
 # Certificates
 PRODUCT_COPY_FILES += \
