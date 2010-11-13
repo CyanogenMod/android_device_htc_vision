@@ -18,6 +18,7 @@ DEVICE=vision
 
 mkdir -p ../../../vendor/htc/$DEVICE/proprietary
 
+adb pull /system/app/MS-HTCVISION-KNT20-02.apk ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/akmd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/awb_camera ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
@@ -167,6 +168,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
     vendor/htc/__DEVICE__/proprietary/mm_property.conf:/system/etc/mm_property.conf \\
+    vendor/htc/__DEVICE__/proprietary/MS-HTCVISION-KNT20-02.apk:/system/app/MS-HTCVISION-KNT20-02.apk \\
     vendor/htc/__DEVICE__/proprietary/pvasflocal.cfg:/system/etc/pvasflocal.cfg \\
     vendor/htc/__DEVICE__/proprietary/vomeComp.cfg:/system/etc/vomeComp.cfg \\
     vendor/htc/__DEVICE__/proprietary/vomeplay.cfg:/system/etc/vomeplay.cfg \\
