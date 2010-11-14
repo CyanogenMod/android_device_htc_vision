@@ -18,7 +18,6 @@ ro.ril.gprsclass=10
 ro.ril.hsdpa.category=10
 ro.ril.hsupa.category=6
 ro.ril.hsxpa=2
-ro.ril.def.agps.mode=1
 ro.ril.def.agps.feature=1
 ro.ril.disable.fd.plmn.prefix=23402,23410,23411
 ro.ril.enable.sdr=0
