@@ -79,7 +79,7 @@ on boot
     write /sys/module/lowmemorykiller/parameters/check_filepages 1
 
     write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 90
-    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 75000
+    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 50000
 
 service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
