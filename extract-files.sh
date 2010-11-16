@@ -57,14 +57,10 @@ adb pull /system/lib/libloc_api-rpc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libloc_api.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libmm-omxcore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libomx_wmadec_sharedlibrary.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libomx_wmvdec_sharedlibrary.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libqcomm_omx.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/librilswitch.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAACDec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoAMRNBDec.so ../../../vendor/htc/$DEVICE/proprietary
@@ -78,7 +74,6 @@ adb pull /system/lib/libvoMPEG4Dec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoOMXME.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoOMXOne.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoPackUV.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvorbisidec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoSrcRTSP.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libvoVidDec.so ../../../vendor/htc/$DEVICE/proprietary
 
@@ -137,15 +132,11 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libloc_api.so:/system/lib/libloc_api.so \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
     vendor/htc/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
-    vendor/htc/__DEVICE__/proprietary/libmm-omxcore.so:/system/lib/libmm-omxcore.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
-    vendor/htc/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
-    vendor/htc/__DEVICE__/proprietary/libOmxVenc.so:/system/lib/libOmxVenc.so \\
     vendor/htc/__DEVICE__/proprietary/libomx_wmadec_sharedlibrary.so:/system/lib/libomx_wmadec_sharedlibrary.so \\
     vendor/htc/__DEVICE__/proprietary/libomx_wmvdec_sharedlibrary.so:/system/lib/libomx_wmvdec_sharedlibrary.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
-    vendor/htc/__DEVICE__/proprietary/libqcomm_omx.so:/system/lib/libqcomm_omx.so \\
     vendor/htc/__DEVICE__/proprietary/librilswitch.so:/system/lib/librilswitch.so \\
     vendor/htc/__DEVICE__/proprietary/libvoAACDec.so:/system/lib/libvoAACDec.so \\
     vendor/htc/__DEVICE__/proprietary/libvoAMRNBDec.so:/system/lib/libvoAMRNBDec.so \\
@@ -159,7 +150,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libvoOMXME.so:/system/lib/libvoOMXME.so \\
     vendor/htc/__DEVICE__/proprietary/libvoOMXOne.so:/system/lib/libvoOMXOne.so \\
     vendor/htc/__DEVICE__/proprietary/libvoPackUV.so:/system/lib/libvoPackUV.so \\
-    vendor/htc/__DEVICE__/proprietary/libvorbisidec.so:/system/lib/libvorbisidec.so \\
     vendor/htc/__DEVICE__/proprietary/libvoSrcRTSP.so:/system/lib/libvoSrcRTSP.so \\
     vendor/htc/__DEVICE__/proprietary/libvoVidDec.so:/system/lib/libvoVidDec.so \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
