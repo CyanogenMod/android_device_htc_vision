@@ -41,7 +41,6 @@ adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprie
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/gralloc.msm7x30.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.vision.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
@@ -119,7 +118,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
     vendor/htc/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
     vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
-    vendor/htc/__DEVICE__/proprietary/gralloc.msm7x30.so:/system/lib/hw/gralloc.msm7x30.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.vision.so:/system/lib/hw/sensors.vision.so \\
     vendor/htc/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
