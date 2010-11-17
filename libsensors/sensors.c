@@ -127,18 +127,20 @@ static const struct sensor_t sSensorList[] = {
         { "CM3602 Light sensor",
                 "Capella Microsystems",
                 1, SENSORS_HANDLE_BASE+ID_L,
-                SENSOR_TYPE_LIGHT, 10240.0f, 1.0f, 0.5f, { } },
+                SENSOR_TYPE_LIGHT, 1023.0f, 1.0f, 0.5f, { } },
 };
 
-static const float sLuxValues[8] = {
-    10.0,
-    160.0,
-    225.0,
-    320.0,
-    640.0,
-    1280.0,
-    2600.0,
-    10240.0
+static const float sLuxValues[10] = {
+    1.0,
+    3.0,
+    5.0,
+    19.0,
+    26.0,
+    69.0,
+    219.0,
+    309.0,
+    498.0,
+    1023.0,
 };
 
 static int open_sensors(const struct hw_module_t* module, const char* name,
