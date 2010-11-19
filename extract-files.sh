@@ -31,11 +31,7 @@ adb pull /system/etc/AdieHWCodec.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AdieHWCodec_WA.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/mm_property.conf ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/pvasflocal.cfg ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/vomeComp.cfg ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/vomeplay.cfg ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/voVidDec.dat ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vpimg ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
@@ -49,7 +45,6 @@ adb pull /system/lib/libganril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libHTC_mm_property.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libkineto.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libloc_api-rpc.so ../../../vendor/htc/$DEVICE/proprietary
@@ -64,20 +59,6 @@ adb pull /system/lib/libpvasfcommon.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libpvasflocalpbreg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libpvasflocalpb.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/librilswitch.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoAACDec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoAMRNBDec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoAMRWBDec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoAndroid.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoH264Dec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvomemedia.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoMMCCRRS.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoMP3Dec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoMPEG4Dec.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoOMXME.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoOMXOne.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoPackUV.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoSrcRTSP.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libvoVidDec.so ../../../vendor/htc/$DEVICE/proprietary
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -126,7 +107,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
-    vendor/htc/__DEVICE__/proprietary/libHTC_mm_property.so:/system/lib/libHTC_mm_property.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
     vendor/htc/__DEVICE__/proprietary/libkineto.so:/system/lib/libkineto.so \\
     vendor/htc/__DEVICE__/proprietary/libloc_api-rpc.so:/system/lib/libloc_api-rpc.so \\
@@ -142,29 +122,11 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libpvasflocalpb.so:/system/lib/libpvasflocalpb.so \\
     vendor/htc/__DEVICE__/proprietary/libq3dtools_adreno200.so:/system/lib/egl/libq3dtools_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/librilswitch.so:/system/lib/librilswitch.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoAACDec.so:/system/lib/libvoAACDec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoAMRNBDec.so:/system/lib/libvoAMRNBDec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoAMRWBDec.so:/system/lib/libvoAMRWBDec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoAndroid.so:/system/lib/libvoAndroid.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoH264Dec.so:/system/lib/libvoH264Dec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvomemedia.so:/system/lib/libvomemedia.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoMMCCRRS.so:/system/lib/libvoMMCCRRS.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoMP3Dec.so:/system/lib/libvoMP3Dec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoMPEG4Dec.so:/system/lib/libvoMPEG4Dec.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoOMXME.so:/system/lib/libvoOMXME.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoOMXOne.so:/system/lib/libvoOMXOne.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoPackUV.so:/system/lib/libvoPackUV.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoSrcRTSP.so:/system/lib/libvoSrcRTSP.so \\
-    vendor/htc/__DEVICE__/proprietary/libvoVidDec.so:/system/lib/libvoVidDec.so \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
-    vendor/htc/__DEVICE__/proprietary/mm_property.conf:/system/etc/mm_property.conf \\
     vendor/htc/__DEVICE__/proprietary/MS-HTCVISION-KNT20-02.apk:/system/app/MS-HTCVISION-KNT20-02.apk \\
     vendor/htc/__DEVICE__/proprietary/pvasflocal.cfg:/system/etc/pvasflocal.cfg \\
-    vendor/htc/__DEVICE__/proprietary/vomeComp.cfg:/system/etc/vomeComp.cfg \\
-    vendor/htc/__DEVICE__/proprietary/vomeplay.cfg:/system/etc/vomeplay.cfg \\
-    vendor/htc/__DEVICE__/proprietary/voVidDec.dat:/system/etc/voVidDec.dat \\
     vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg
 EOF
 
