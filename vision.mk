@@ -158,6 +158,6 @@ $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_NAME := htc_vision
 PRODUCT_DEVICE := vision
-PRODUCT_MODEL := T-Mobile G2
+PRODUCT_MODEL := HTC Vision
 PRODUCT_MANUFACTURER := HTC
 
