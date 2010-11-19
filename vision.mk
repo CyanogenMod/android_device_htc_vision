@@ -140,8 +140,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/vision/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/vision/modules/kineto_gan.ko:system/lib/modules/kineto_gan.ko
+    device/htc/vision/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
 
