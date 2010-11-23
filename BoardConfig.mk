@@ -74,6 +74,8 @@ BOARD_CAMERA_USE_GETBUFFERINFO := true
 
 BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
 
+BOARD_USE_NEW_LIBRIL_HTC := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"
