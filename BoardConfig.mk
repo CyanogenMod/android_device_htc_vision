@@ -79,6 +79,8 @@ BOARD_USE_NEW_LIBRIL_HTC := true
 BOARD_HAVE_FM_RADIO := true
 BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 
+BOARD_USE_BROKEN_INJECT_XTRA_HACK := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"
