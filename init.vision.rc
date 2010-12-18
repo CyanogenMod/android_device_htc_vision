@@ -1,5 +1,7 @@
 on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
+on fs
     mkdir /system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
@@ -9,15 +11,7 @@ on boot
     mount ext4 /dev/block/mmcblk0p27 /cache wait noatime nosuid nodev data=ordered,noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p28 /devlog wait noatime nosuid nodev data=ordered,noauto_da_alloc
 
-on early-init
-    device mtd@misc 0460 radio diag
 
-on init
-    # double check the perms and set owner
-    chown root root /devlog
-    chmod 0700 /devlog
-
-on boot
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp

@@ -28,7 +28,8 @@ PRODUCT_COPY_FILES += \
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/htc/vision/init.vision.rc:root/init.vision.rc
+    device/htc/vision/init.vision.rc:root/init.vision.rc \
+    device/htc/vision/ueventd.vision.rc:root/ueventd.vision.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
