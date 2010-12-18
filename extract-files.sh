@@ -18,7 +18,6 @@ DEVICE=vision
 
 mkdir -p ../../../vendor/htc/$DEVICE/proprietary
 
-adb pull /system/app/MS-HTCVISION-KNT20-02.apk ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/akmd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/awb_camera ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
@@ -45,7 +44,6 @@ adb pull /system/lib/libgemini.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libgsl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_acoustic.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libkineto.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmipl.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libmmjpeg.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
@@ -97,7 +95,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libgsl.so:/system/lib/libgsl.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
     vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
-    vendor/htc/__DEVICE__/proprietary/libkineto.so:/system/lib/libkineto.so \\
     vendor/htc/__DEVICE__/proprietary/libmmipl.so:/system/lib/libmmipl.so \\
     vendor/htc/__DEVICE__/proprietary/libmmjpeg.so:/system/lib/libmmjpeg.so \\
     vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
@@ -106,7 +103,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
-    vendor/htc/__DEVICE__/proprietary/MS-HTCVISION-KNT20-02.apk:/system/app/MS-HTCVISION-KNT20-02.apk \\
     vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg
 EOF
 
