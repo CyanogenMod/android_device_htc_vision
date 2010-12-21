@@ -168,6 +168,8 @@
         <item>30</item>
     </integer-array>
 
+    <bool name="config_animateScreenLights">false</bool>
+
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not 
          specified -->
     <string name="default_wallpaper_component">com.android.wallpaper/.nexus.NexusWallpaper</string>
