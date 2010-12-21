@@ -67,7 +67,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     librs_jni \
     lights.vision \
-    sensors.vision
+    sensors.vision \
+    gralloc.msm7x30 \
+    overlay.default \
+    gps.vision \
+    libOmxCore \
+    libOmxVenc \
+    libOmxVdec
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
