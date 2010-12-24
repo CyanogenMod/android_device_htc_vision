@@ -14,7 +14,7 @@
 
 LOCAL_PATH:= $(call my-dir)
 
-ifneq ($(TARGET_SIMULATOR),true)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),vision)
 
 include $(CLEAR_VARS)
 
@@ -32,4 +32,4 @@ LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
 
-endif # !TARGET_SIMULATOR
+endif # TARGET_BOOTLOADER_BOARD_NAME
