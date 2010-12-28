@@ -151,6 +151,9 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
 
+# Broadcom FM radio
+$(call inherit-product, device/htc/common/fm_radio.mk)
+
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/vision/media_a1026.mk)
 
