@@ -6,10 +6,10 @@ on fs
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
-    mount ext4 /dev/block/mmcblk0p25 /system wait ro data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p26 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p27 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p28 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
+    mount ext3 /dev/block/mmcblk0p25 /system wait ro data=ordered
+    mount ext3 /dev/block/mmcblk0p26 /data wait noatime nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p27 /cache wait noatime nosuid nodev data=ordered
+    mount ext3 /dev/block/mmcblk0p28 /devlog wait noatime nosuid nodev data=ordered
 
 
     mkdir /data/misc/wifi 0770 wifi wifi
