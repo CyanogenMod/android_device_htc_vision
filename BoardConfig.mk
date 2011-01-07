@@ -82,6 +82,9 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 # Use RGB565 surfaces until userspace drivers are upgraded
 BOARD_NO_RGBX_8888 := true
 
+# Use nasty hack to make Kineto work
+BOARD_USE_KINETO_COMPATIBILITY := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"

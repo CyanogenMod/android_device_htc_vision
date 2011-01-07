@@ -125,6 +125,10 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/certs/T-Mobile_USA_Issuer_CA_02.der:system/etc/T-Mobile_USA_Issuer_CA_02.der \
     device/htc/vision/certs/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der
 
+# A "special" libcrypto for Kineto
+PRODUCT_COPY_FILES += \
+    device/htc/vision/prebuilt/libcryp98.so:system/lib/libcryp98.so
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
