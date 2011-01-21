@@ -79,21 +79,32 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/htc/vision/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
     device/htc/vision/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-ara.kcm.bin:system/usr/keychars/vision-keypad-ara.kcm.bin \
     device/htc/vision/keychars/vision-keypad-ell.kcm.bin:system/usr/keychars/vision-keypad-ell.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-esn.kcm.bin:system/usr/keychars/vision-keypad-esn.kcm.bin \
     device/htc/vision/keychars/vision-keypad-fra.kcm.bin:system/usr/keychars/vision-keypad-fra.kcm.bin \
     device/htc/vision/keychars/vision-keypad-ger.kcm.bin:system/usr/keychars/vision-keypad-ger.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-hk.kcm.bin:system/usr/keychars/vision-keypad-hk.kcm.bin \
     device/htc/vision/keychars/vision-keypad-ita.kcm.bin:system/usr/keychars/vision-keypad-ita.kcm.bin \
     device/htc/vision/keychars/vision-keypad.kcm.bin:system/usr/keychars/vision-keypad.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-nor.kcm.bin:system/usr/keychars/vision-keypad-nor.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-rus.kcm.bin:system/usr/keychars/vision-keypad-rus.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-sea.kcm.bin:system/usr/keychars/vision-keypad-sea.kcm.bin \
     device/htc/vision/keychars/vision-keypad-tur.kcm.bin:system/usr/keychars/vision-keypad-tur.kcm.bin \
     device/htc/vision/keychars/vision-keypad-wwe-bopomo.kcm.bin:system/usr/keychars/vision-keypad-wwe-bopomo.kcm.bin \
     device/htc/vision/keychars/vision-keypad-wwe.kcm.bin:system/usr/keychars/vision-keypad-wwe.kcm.bin \
     device/htc/vision/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/vision/keylayout/vision-keypad-ara.kl:system/usr/keylayout/vision-keypad-ara.kl \
     device/htc/vision/keylayout/vision-keypad-ell.kl:system/usr/keylayout/vision-keypad-ell.kl \
+    device/htc/vision/keylayout/vision-keypad-esn.kl:system/usr/keylayout/vision-keypad-esn.kl \
     device/htc/vision/keylayout/vision-keypad-fra.kl:system/usr/keylayout/vision-keypad-fra.kl \
     device/htc/vision/keylayout/vision-keypad-ger.kl:system/usr/keylayout/vision-keypad-ger.kl \
+    device/htc/vision/keylayout/vision-keypad-hk.kl:system/usr/keylayout/vision-keypad-hk.kl \
     device/htc/vision/keylayout/vision-keypad-ita.kl:system/usr/keylayout/vision-keypad-ita.kl \
     device/htc/vision/keylayout/vision-keypad.kl:system/usr/keylayout/vision-keypad.kl \
+    device/htc/vision/keylayout/vision-keypad-nor.kl:system/usr/keylayout/vision-keypad-nor.kl \
+    device/htc/vision/keylayout/vision-keypad-rus.kl:system/usr/keylayout/vision-keypad-rus.kl \
+    device/htc/vision/keylayout/vision-keypad-sea.kl:system/usr/keylayout/vision-keypad-sea.kl \
     device/htc/vision/keylayout/vision-keypad-tur.kl:system/usr/keylayout/vision-keypad-tur.kl \
     device/htc/vision/keylayout/vision-keypad-wwe-bopomo.kl:system/usr/keylayout/vision-keypad-wwe-bopomo.kl \
     device/htc/vision/keylayout/vision-keypad-wwe.kl:system/usr/keylayout/vision-keypad-wwe.kl
