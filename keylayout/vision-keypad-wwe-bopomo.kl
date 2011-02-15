@@ -43,7 +43,7 @@ key 19    R                 WAKE_DROPPED
 key 18    E                 WAKE_DROPPED
 
 # column 5
-key 183   FUNC_2            WAKE_DROPPED
+key 183   FUNC_3            WAKE_DROPPED
 key 44    Z                 WAKE_DROPPED
 key 45    X                 WAKE_DROPPED
 key 31    S                 WAKE_DROPPED
