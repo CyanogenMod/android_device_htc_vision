@@ -16,3 +16,5 @@
 /dev/msm_acdb           0660    system      audio
 /dev/msm_pcm_lp_dec     0660    system      audio
 
+/dev/kgsl-2d0           0666    root        root
+/dev/kgsl-3d0           0666    root        root
