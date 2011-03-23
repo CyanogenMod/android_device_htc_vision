@@ -79,11 +79,11 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 
 BOARD_USE_FROYO_LIBCAMERA := true
 
+# Current drivers don't support new EGL config
+BOARD_USE_OLD_EGL_CONFIG := true
+
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := vision
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
-
-# Use RGB565 surfaces until userspace drivers are upgraded
-BOARD_NO_RGBX_8888 := true
 
 # Use nasty hack to make Kineto work
 BOARD_USE_KINETO_COMPATIBILITY := true
