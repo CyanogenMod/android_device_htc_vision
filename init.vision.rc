@@ -87,17 +87,7 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     group bluetooth net_bt_admin
     disabled
 
-
-
 service udhcpd /system/bin/udhcpd
-    disabled
-    oneshot
-
-service netsharing_on /system/bin/netsharing net on
-    disabled
-    oneshot
-
-service netsharing_off /system/bin/netsharing net off
     disabled
     oneshot
 
