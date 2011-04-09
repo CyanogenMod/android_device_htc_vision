@@ -80,6 +80,9 @@ BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
 
 BOARD_USE_FROYO_LIBCAMERA := true
 
+# Workaround for Vision's broken overlay scaling
+BOARD_OVERLAY_MINIFICATION_LIMIT := 2
+
 # Current drivers don't support new EGL config
 BOARD_NO_RGBX_8888 := true
 
