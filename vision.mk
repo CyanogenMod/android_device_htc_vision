@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2011 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,11 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-#
-# This is the product configuration for a generic GSM passion,
-# not specialized for any geography.
 #
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
@@ -46,34 +41,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
 DEVICE_PACKAGE_OVERLAYS += device/htc/vision/overlay
 
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/vision/media_profiles.xml:system/etc/media_profiles.xml
-
 PRODUCT_PACKAGES += \
-    librs_jni \
     lights.vision \
     sensors.vision \
-    gralloc.msm7x30 \
-    overlay.default \
-    gps.vision \
-    libOmxCore \
-    libOmxVenc \
-    libOmxVdec
+    gps.vision
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -134,16 +110,6 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/certs/T-Mobile_USA_Issuer_CA_02.der:system/etc/T-Mobile_USA_Issuer_CA_02.der \
     device/htc/vision/certs/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der
 
-# A "special" libcrypto for Kineto
-PRODUCT_COPY_FILES += \
-    device/htc/vision/prebuilt/libcryp98.so:system/lib/libcryp98.so
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-# vision uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
-
 PRODUCT_COPY_FILES += \
     device/htc/vision/vold.fstab:system/etc/vold.fstab
 
@@ -163,6 +129,9 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
+
+# common msm7x30 configs
+$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/vision/media_a1026.mk)
