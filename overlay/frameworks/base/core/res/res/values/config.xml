@@ -168,10 +168,8 @@
         <item>30</item>
     </integer-array>
 
-    <!-- Power animations, disabled on Vision do to timing issues -->
+    <!-- Power animations -->
     <bool name="config_animateScreenLights">false</bool>
-    <bool name="config_enableScreenOnAnimation">false</bool>
-    <bool name="config_enableScreenOffAnimation">false</bool>
 
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not 
          specified -->
