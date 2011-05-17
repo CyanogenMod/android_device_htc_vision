@@ -43,6 +43,11 @@ on fs
     chown system system /sys/class/leds/jogball-backlight/period
     chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
+
+    # flashlight
+    chown system camera /sys/class/leds/flashlight/brightness
+    chmod 0660          /sys/class/leds/flashlight/brightness
+
     #set radio_feedback permissions
     chown radio radio /dev/radio_feedback
     chmod 0660 /dev/radio_feedback
