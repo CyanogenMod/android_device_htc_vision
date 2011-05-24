@@ -80,6 +80,10 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
     disabled
     oneshot
 
+service iprenew_eth0 /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
 # compass/accelerometer daemon
 service akmd /system/bin/akmd
     user compass
