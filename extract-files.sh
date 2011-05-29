@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/logcat2:/system/bin/logcat2 \\
     vendor/htc/__DEVICE__/proprietary/lsc_camera:/system/bin/lsc_camera \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
-    vendor/htc/__DEVICE__/proprietary/MS-HTCEMR-KNT20-02-A0-GB-02.apk:/system/app/MS-HTCEMR-KNT20-02-A0-GB-02.apk \\
+    vendor/htc/__DEVICE__/proprietary/MS-HTCVISION-KNT20-02-A0-GB.apk:/system/app/MS-HTCVISION-KNT20-02-A0-GB.apk \\
     vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg
 EOF
 
