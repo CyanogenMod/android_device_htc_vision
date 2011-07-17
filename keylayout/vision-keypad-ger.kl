@@ -4,7 +4,7 @@ key 107   ENDCALL           WAKE_DROPPED
 # column 0
 key 185   USER2             WAKE_DROPPED
 key 100   ALT_RIGHT         WAKE_DROPPED
-key 217   SLASH             WAKE_DROPPED
+key 53    SLASH             WAKE_DROPPED
 key 28    ENTER             WAKE_DROPPED
 key 38    L                 WAKE_DROPPED
 key 14    DEL               WAKE_DROPPED
@@ -32,7 +32,7 @@ key 47    V                 WAKE_DROPPED
 key 48    B                 WAKE_DROPPED
 key 34    G                 WAKE_DROPPED
 key 20    T                 WAKE_DROPPED
-key 21    Z                 WAKE_DROPPED
+key 21    Y                 WAKE_DROPPED
 
 # column 4
 key 51    COMMA             WAKE_DROPPED
@@ -43,8 +43,8 @@ key 19    R                 WAKE_DROPPED
 key 18    E                 WAKE_DROPPED
 
 # column 5
-key 183   SEARCH            WAKE_DROPPED
-key 44    Y                 WAKE_DROPPED
+key 217   SEARCH            WAKE_DROPPED
+key 44    Z                 WAKE_DROPPED
 key 45    X                 WAKE_DROPPED
 key 31    S                 WAKE_DROPPED
 key 30    A                 WAKE_DROPPED
