@@ -43,6 +43,9 @@ BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := vision
 
+TARGET_USES_SF_BYPASS := true
+TARGET_HAVE_HDMI_OUT := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"
