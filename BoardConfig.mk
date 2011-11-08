@@ -61,7 +61,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-TARGET_PREBUILT_KERNEL := device/htc/vision/kernel
+TARGET_PREBUILT_KERNEL := device/htc/msm7x30-common/msm7230/kernel
 
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
