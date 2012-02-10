@@ -36,7 +36,7 @@
          Zone N:        array[N - 1] <= LUX < array[N]
          Zone N + 1:    array[N] <= LUX < infinity
 
-Must be overridden in platform specific overlays -->
+          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
          <item>2</item>
          <item>4</item>
@@ -50,9 +50,9 @@ Must be overridden in platform specific overlays -->
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
-in the config_autoBrightnessLevels array. This array should have size one greater
-than the size of the config_autoBrightnessLevels array.
--->
+          in the config_autoBrightnessLevels array. This array should have size one greater
+          than the size of the config_autoBrightnessLevels array.
+          -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>40</item>
         <item>50</item>
@@ -67,9 +67,9 @@ than the size of the config_autoBrightnessLevels array.
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
-in the config_autoBrightnessLevels array. This array should have size one greater
-than the size of the config_autoBrightnessLevels array.
--->
+          in the config_autoBrightnessLevels array. This array should have size one greater
+          than the size of the config_autoBrightnessLevels array.
+          -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>4</item>
         <item>6</item>
@@ -84,10 +84,10 @@ than the size of the config_autoBrightnessLevels array.
     </integer-array>
 
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
-in the config_autoBrightnessLevels array. This array should have size one greater
-than the size of the config_autoBrightnessLevels array.
-Passion has no keyboard so all values are zero.
--->
+          in the config_autoBrightnessLevels array. This array should have size one greater
+          than the size of the config_autoBrightnessLevels array.
+          Passion has no keyboard so all values are zero.
+          -->
     <integer-array name="config_autoBrightnessKeyboardBacklightValues">
         <item>255</item>
         <item>255</item>
