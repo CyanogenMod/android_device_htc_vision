@@ -38,15 +38,15 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>11</item>
-        <item>41</item>
-        <item>91</item>
-        <item>161</item>
-        <item>226</item>
-        <item>321</item>
-        <item>641</item>
-        <item>1281</item>
-        <item>2601</item>
+        <item>2</item>
+        <item>4</item>
+        <item>10</item>
+        <item>22</item>
+        <item>42</item>
+        <item>123</item>
+        <item>260</item>
+        <item>392</item>
+        <item>714</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -54,15 +54,15 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>89</item>
-        <item>89</item>
-        <item>126</item>
-        <item>164</item>
-        <item>164</item>
-        <item>164</item>
-        <item>187</item>
-        <item>210</item>
-        <item>233</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>75</item>
+        <item>90</item>
+        <item>110</item>
+        <item>140</item>
+        <item>190</item>
+        <item>255</item>
         <item>255</item>
     </integer-array>
 
@@ -71,13 +71,13 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>4</item>
+        <item>6</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
         <item>30</item>
         <item>30</item>
-        <item>30</item>
-        <item>30</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -93,7 +93,7 @@
         <item>255</item>
         <item>255</item>
         <item>255</item>
-        <item>0</item>
+        <item>255</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
