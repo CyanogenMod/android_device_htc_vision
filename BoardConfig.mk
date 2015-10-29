@@ -25,61 +25,23 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
+# inherit from common msm7x30
+-include device/htc/msm7x30-common/BoardConfigCommon.mk
+
 # inherit from the proprietary version
 -include vendor/htc/vision/BoardConfigVendor.mk
 
-TARGET_NO_BOOTLOADER := true
-
-TARGET_BOARD_PLATFORM := msm7x30
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-
 TARGET_BOOTLOADER_BOARD_NAME := vision
-
-# Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
-BOARD_WLAN_DEVICE           := bcm4329
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
-WIFI_DRIVER_MODULE_NAME     := "bcm4329"
-
-BOARD_USES_GENERIC_AUDIO := false
-BOARD_PREBUILT_LIBAUDIO := true
 
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
 BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x4000000
-BOARD_PAGE_SIZE := 0x1000
+BOARD_KERNEL_PAGE_SIZE := 4096
 
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+# Workaround for Vision's broken overlay scaling
+BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 
-BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
-
-BOARD_VENDOR_USE_AKMD := akm8973
-
-BOARD_EGL_CFG := device/htc/vision/egl.cfg
-
-BOARD_USES_QCOM_LIBS := true
-
-BOARD_USE_HTC_USB_FUNCTION_SWITCH := true
-
-BOARD_CAMERA_USE_GETBUFFERINFO := true
-
-BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
-
-BOARD_USE_NEW_LIBRIL_HTC := true
-
-BOARD_HAVE_FM_RADIO := true
-BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
-
-BOARD_USE_BROKEN_INJECT_XTRA_HACK := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := vision
 
 # cat /proc/emmc
 # dev:        size     erasesize name
@@ -91,14 +53,12 @@ BOARD_USE_BROKEN_INJECT_XTRA_HACK := true
 # mmcblk0p26: 53200200 00000200 "userdata"
 # mmcblk0p28: 01400000 00000200 "devlog"
 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00400000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x0087f400
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x19fbfa00   # limited so we enforce room to grow
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x53200200
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 435941376
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1394606080
+BOARD_BOOTIMAGE_PARTITION_SIZE := 4194304
+BOARD_FLASH_BLOCK_SIZE := 262144
 
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-TARGET_USERIMAGES_USE_EXT2 := true
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/vision/kernel
@@ -108,3 +68,4 @@ BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_USES_RECOVERY_CHARGEMODE := true

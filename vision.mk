@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2011 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,6 @@
 # limitations under the License.
 #
 
-#
-# This is the product configuration for a generic GSM passion,
-# not specialized for any geography.
-#
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
@@ -28,7 +23,8 @@ PRODUCT_COPY_FILES += \
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
 PRODUCT_COPY_FILES += \
-    device/htc/vision/init.vision.rc:root/init.vision.rc
+    device/htc/vision/init.vision.rc:root/init.vision.rc \
+    device/htc/vision/ueventd.vision.rc:root/ueventd.vision.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
@@ -45,48 +41,46 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
 DEVICE_PACKAGE_OVERLAYS += device/htc/vision/overlay
 
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-# media config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/vision/media_profiles.xml:system/etc/media_profiles.xml
-
 PRODUCT_PACKAGES += \
-    librs_jni \
     lights.vision \
-    sensors.vision
+    sensors.vision \
+    gps.vision
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/vision/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
     device/htc/vision/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-ara.kcm.bin:system/usr/keychars/vision-keypad-ara.kcm.bin \
     device/htc/vision/keychars/vision-keypad-ell.kcm.bin:system/usr/keychars/vision-keypad-ell.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-esn.kcm.bin:system/usr/keychars/vision-keypad-esn.kcm.bin \
     device/htc/vision/keychars/vision-keypad-fra.kcm.bin:system/usr/keychars/vision-keypad-fra.kcm.bin \
     device/htc/vision/keychars/vision-keypad-ger.kcm.bin:system/usr/keychars/vision-keypad-ger.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-hk.kcm.bin:system/usr/keychars/vision-keypad-hk.kcm.bin \
     device/htc/vision/keychars/vision-keypad-ita.kcm.bin:system/usr/keychars/vision-keypad-ita.kcm.bin \
     device/htc/vision/keychars/vision-keypad.kcm.bin:system/usr/keychars/vision-keypad.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-nor.kcm.bin:system/usr/keychars/vision-keypad-nor.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-rus.kcm.bin:system/usr/keychars/vision-keypad-rus.kcm.bin \
+    device/htc/vision/keychars/vision-keypad-sea.kcm.bin:system/usr/keychars/vision-keypad-sea.kcm.bin \
     device/htc/vision/keychars/vision-keypad-tur.kcm.bin:system/usr/keychars/vision-keypad-tur.kcm.bin \
     device/htc/vision/keychars/vision-keypad-wwe-bopomo.kcm.bin:system/usr/keychars/vision-keypad-wwe-bopomo.kcm.bin \
     device/htc/vision/keychars/vision-keypad-wwe.kcm.bin:system/usr/keychars/vision-keypad-wwe.kcm.bin \
     device/htc/vision/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/vision/keylayout/vision-keypad-ara.kl:system/usr/keylayout/vision-keypad-ara.kl \
     device/htc/vision/keylayout/vision-keypad-ell.kl:system/usr/keylayout/vision-keypad-ell.kl \
+    device/htc/vision/keylayout/vision-keypad-esn.kl:system/usr/keylayout/vision-keypad-esn.kl \
     device/htc/vision/keylayout/vision-keypad-fra.kl:system/usr/keylayout/vision-keypad-fra.kl \
     device/htc/vision/keylayout/vision-keypad-ger.kl:system/usr/keylayout/vision-keypad-ger.kl \
+    device/htc/vision/keylayout/vision-keypad-hk.kl:system/usr/keylayout/vision-keypad-hk.kl \
     device/htc/vision/keylayout/vision-keypad-ita.kl:system/usr/keylayout/vision-keypad-ita.kl \
     device/htc/vision/keylayout/vision-keypad.kl:system/usr/keylayout/vision-keypad.kl \
+    device/htc/vision/keylayout/vision-keypad-nor.kl:system/usr/keylayout/vision-keypad-nor.kl \
+    device/htc/vision/keylayout/vision-keypad-rus.kl:system/usr/keylayout/vision-keypad-rus.kl \
+    device/htc/vision/keylayout/vision-keypad-sea.kl:system/usr/keylayout/vision-keypad-sea.kl \
     device/htc/vision/keylayout/vision-keypad-tur.kl:system/usr/keylayout/vision-keypad-tur.kl \
     device/htc/vision/keylayout/vision-keypad-wwe-bopomo.kl:system/usr/keylayout/vision-keypad-wwe-bopomo.kl \
     device/htc/vision/keylayout/vision-keypad-wwe.kl:system/usr/keylayout/vision-keypad-wwe.kl
@@ -97,8 +91,6 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/vision/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/vision/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb \
-    device/htc/vision/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    device/htc/vision/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
     device/htc/vision/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
     device/htc/vision/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
     device/htc/vision/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
@@ -117,12 +109,6 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/certs/T-Mobile_USA_Issuer_CA_01.der:system/etc/T-Mobile_USA_Issuer_CA_01.der \
     device/htc/vision/certs/T-Mobile_USA_Issuer_CA_02.der:system/etc/T-Mobile_USA_Issuer_CA_02.der \
     device/htc/vision/certs/T-Mobile_USA_Root_CA.der:system/etc/T-Mobile_USA_Root_CA.der
-
-# we have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-# vision uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
     device/htc/vision/vold.fstab:system/etc/vold.fstab
@@ -144,6 +130,9 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
 
+# common msm7x30 configs
+$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
+
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/vision/media_a1026.mk)
 
@@ -153,7 +142,7 @@ $(call inherit-product, device/htc/vision/media_htcaudio.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 
 PRODUCT_NAME := htc_vision
