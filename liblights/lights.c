@@ -190,6 +190,35 @@ write_int(struct led_prop *prop, int value)
     return 0;
 }
 
+// We will need this once flash frequency is supported. Currently unused.
+static int
+write_string(struct led_prop *prop, const char* string, int len)
+{
+    ssize_t amt;
+    ssize_t bytes;
+
+    if (prop->fd < 0)
+        return 0;
+
+    LOGV("%s %s: %s\n", __func__, prop->filename, string);
+
+    bytes = len;
+    while (bytes > 0) {
+        amt = write(prop->fd, string, bytes);
+
+        if (amt < 0) {
+            if (errno == EINTR)
+                continue;
+
+            LOGE("unable to write to %s: %d\n", prop->filename, errno);
+            return -errno;
+        }
+        bytes -= amt;
+    }
+
+    return 0;
+}
+
 static int
 write_rgb(struct led_prop *prop, int red, int green, int blue)
 {
@@ -225,6 +254,14 @@ set_rgb(int red, int green, int blue)
            (blue & 0x000000ff));
 }
 
+static void
+get_rgb(struct light_state_t const* state, int *red, int *green, int *blue)
+{
+    *red   = (state->color >> 16) & 0xFF;
+    *green = (state->color >>  8) & 0xFF;
+    *blue  = (state->color      ) & 0xFF;
+}
+
 static int
 is_lit(struct light_state_t const* state)
 {
@@ -249,9 +286,7 @@ set_trackball_light(struct light_state_t const* state)
 
 
     if (mode != 0) {
-        red = (state->color >> 16) & 0xff;
-        green = (state->color >> 8) & 0xff;
-        blue = state->color & 0xff;
+        get_rgb(state, &red, &green, &blue);
 
         rc = write_rgb(&leds[JOGBALL_LED].color, red, green, blue);
         if (rc != 0)
@@ -284,6 +319,16 @@ handle_trackball_light_locked(int type)
 
     LOGV("%s type %d attention %p notify %p\n",
         __func__, type, g_attention, g_notify);
+
+    // This switch could be shortened to:
+#if 0
+    if (!attn_mode) {
+        new_state = g_attention;
+    }
+    else {
+        new_state = g_notify;
+    }
+#endif
 
     switch (type) {
         case LIGHT_ATTENTION: {
@@ -366,81 +411,44 @@ static int
 set_speaker_light_locked(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int len;
-    unsigned int colorRGB;
+    int r, g, b;
+    int err = 0;
 
-    /* Red = amber_led, blue or green = green_led */
-    if (is_lit(&g_notification)) {
-        colorRGB = state->color & 0x00FF00;
-    } else {
-        colorRGB = state->color & 0xFFFFFF;
-    }
+    // FIXME: enable blue LED!
 
-    switch (state->flashMode) {
-        case LIGHT_FLASH_TIMED:
-            LOGV("set_led_state colorRGB=%08X, flashing\n", colorRGB);
-            switch (colorRGB) {
-                case RGB_RED:
-                    write_int(&leds[RED_LED].blink, 1);
-                    break;
-                case RGB_AMBER:
-                    write_int(&leds[AMBER_LED].blink, 2);
-                    break;
-                case RGB_GREEN:
-                    write_int(&leds[GREEN_LED].blink, 1);
-                    break;
-                case RGB_BLUE:
-                    write_int(&leds[BLUE_LED].blink, 1);
-                    break;
-                case RGB_BLACK:  /*off*/
-                    write_int(&leds[GREEN_LED].blink, 0);
-                    write_int(&leds[RED_LED].blink, 0);
-                    write_int(&leds[BLUE_LED].blink, 0);
-                    write_int(&leds[AMBER_LED].blink, 0);
-                    break;
-                    break;
-                default:
-                    LOGE("set_led_state colorRGB=%08X, unknown color\n",
-                          colorRGB);
-                    break;
-            }
-            break;
-        case LIGHT_FLASH_NONE:
-            LOGV("set_led_state colorRGB=%08X, on\n", colorRGB);
-            switch (colorRGB) {
-               case RGB_RED:
-                    /*no support for red solid */
-               case RGB_AMBER:
-                    write_int(&leds[AMBER_LED].brightness, 1);
-                    write_int(&leds[GREEN_LED].brightness, 0);
-                    write_int(&leds[BLUE_LED].brightness, 0);
-                    break;
-                case RGB_GREEN:
-                    write_int(&leds[GREEN_LED].brightness, 1);
-                    write_int(&leds[AMBER_LED].brightness, 0);
-                    write_int(&leds[BLUE_LED].brightness, 0);
-                   break;
-                case RGB_BLUE:
-                    write_int(&leds[BLUE_LED].brightness, 1);
-                    write_int(&leds[GREEN_LED].brightness, 0);
-                    write_int(&leds[AMBER_LED].brightness, 0);
-                   break;
-                case RGB_BLACK:  /*off*/
-                    write_int(&leds[GREEN_LED].brightness, 0);
-                    write_int(&leds[AMBER_LED].brightness, 0);
-                    write_int(&leds[BLUE_LED].brightness, 0);
-                    write_int(&leds[RED_LED].brightness, 0);
-                    break;
-                default:
-                    LOGE("set_led_state colorRGB=%08X, unknown color\n",
-                          colorRGB);
-                    break;
-            }
-            break;
-        default:
-            LOGE("set_led_state colorRGB=%08X, unknown mode %d\n",
-                  colorRGB, state->flashMode);
+    get_rgb(state, &r, &g, &b);
+
+    err = write_int(&leds[AMBER_LED].brightness, r);
+    err = write_int(&leds[GREEN_LED].brightness, g);
+    err = write_int(&leds[BLUE_LED].brightness, b);
+
+    /* leds[R/G/B].brightness > 0 will result in a solid color,
+     * but the blinking trigger overrides this.
+     * Note that blink and brightness cancel each other out.
+     * Example: 1.) g.blink = 1 -> green LED will blink.
+     *          2.) g.brightness = 1 -> green LED will show a solid color.
+     *          3.) g.blink = 1 -> green LED will blink.
+     *          ...
+     *
+     * If turning off blinking, there are two cases:
+     *   - brightness > 0: in this case, the solid color will be restored.
+     *   - brightness = 0: turn off the LED.
+     */
+    if (state->flashMode != LIGHT_FLASH_NONE) {
+        LOGV("set_led_state color R=%02x, G=%02x, B=%02X, flashing\n", r, g, b);
+        
+        err = write_int(&leds[AMBER_LED].blink, r ? 1 : 0);
+        err = write_int(&leds[GREEN_LED].blink, g ? 1 : 0);
+        err = write_int(&leds[BLUE_LED].blink, b ? 1 : 0);
     }
+    else {
+        LOGV("set_led_state color R=%02x, G=%02x, B=%02X, on\n", r, g, b);
+
+        err = write_int(&leds[AMBER_LED].blink, 0);
+        err = write_int(&leds[GREEN_LED].blink, 0);
+        err = write_int(&leds[BLUE_LED].blink, 0);
+   }
+
     return 0;
 }
 
@@ -448,12 +456,11 @@ static void
 handle_speaker_light_locked(struct light_device_t* dev,
 		struct light_state_t const* state)
 {
-    if (is_lit(&g_battery)) {
+    // Notifications take precedence over charging status.
+    if (is_lit(&g_battery) && !is_lit(&g_notification)) {
         set_speaker_light_locked(dev, &g_battery);
-      if (is_lit(&g_notification)) {
-                set_speaker_light_locked(dev, &g_notification);
-        }
-    } else {
+    }
+    else {
         set_speaker_light_locked(dev, &g_notification);
     }
 }
@@ -522,9 +529,18 @@ set_light_notifications(struct light_device_t* dev,
     }
 
     if (state->flashMode != LIGHT_FLASH_NONE) {
+        /* FIXME: this is currently just a noop.
+         *        The driver doesn't yet support setting a custom flash frequency,
+         *        buts writes a specific mode to the device via I2C.
+         *        (See kernel source, drivers/leds/leds-microp.c, microp_led_blink_store.)
+         * Stay tuned for some kernel changes...
+         */
         g_notify->flashMode = LIGHT_FLASH_HARDWARE;
         g_notify->flashOnMS = 7;
         g_notify->flashOffMS = (state->flashOnMS + state->flashOffMS)/1000;
+        LOGV("%s: configure blink => on: %d, off: %d", __func__,
+                                                       g_notify->flashOnMS,
+                                                       g_notify->flashOffMS);
     } else {
         g_notify->flashOnMS = 0;
         g_notify->flashOffMS = 0;
